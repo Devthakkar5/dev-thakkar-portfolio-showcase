@@ -68,7 +68,7 @@ const Resume = () => {
 
   const handleDownloadResume = () => {
     // Use the direct GitHub download link
-    window.open('https://github.com/Devthakkar5/dev-thakkar-portfolio-showcase/blob/main/src/components/Resume.tsx', '_blank');
+    window.open('https://github.com/Devthakkar5/Resume/raw/main/Dev%20Thakkar%20%20Resume%20Tech.pdf', '_blank');
   };
 
   return (
