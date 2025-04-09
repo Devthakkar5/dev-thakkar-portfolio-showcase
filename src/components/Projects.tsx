@@ -18,7 +18,7 @@ const Projects = () => {
       challenges: 'Optimized database performance for fast game state updates.',
       skills: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'MongoDB'],
       github: 'https://github.com/Devthakkar5/UNO-Game-Repo',
-      image: '/public/lovable-uploads/uno-game.jpg',
+      image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Funo-card-game-cards-leisure-games-deck&psig=AOvVaw0isqosWS7hXicBGxmK_UDB&ust=1744254472509000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCODniLX8yYwDFQAAAAAdAAAAABAI',
       icon: <Server className="h-8 w-8 text-neon-blue" />
     },
     {
@@ -33,7 +33,7 @@ const Projects = () => {
       challenges: 'Designed an efficient UI layout using JavaFX and optimized app responsiveness.',
       skills: ['Java', 'JavaFX', 'Android Studio'],
       github: 'https://github.com/Devthakkar5/Grocery-Store-App-Repo',
-      image: '/public/lovable-uploads/grocery-app.jpg',
+      image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fchatelaine.com%2Fshop-canada%2Fsix-apps-that-make-shopping-canadian-easier%2F&psig=AOvVaw3aQ8VBPNtp4VajuBdA22By&ust=1744254546316000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPDAw9j8yYwDFQAAAAAdAAAAABAE',
       icon: <Code className="h-8 w-8 text-neon-purple" />
     }
   ];
