@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Github, ExternalLink, Code, Database, Server } from 'lucide-react';
+import { Github, Code, Database, Server } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -18,7 +18,7 @@ const Projects = () => {
       challenges: 'Optimized database performance for fast game state updates.',
       skills: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'MongoDB'],
       github: 'https://github.com/Devthakkar5/UNO-Game-Repo',
-      image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Funo-card-game-cards-leisure-games-deck&psig=AOvVaw0isqosWS7hXicBGxmK_UDB&ust=1744254472509000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCODniLX8yYwDFQAAAAAdAAAAABAI',
+      image: '/lovable-uploads/uno-game.jpg',
       icon: <Server className="h-8 w-8 text-neon-blue" />
     },
     {
@@ -33,7 +33,7 @@ const Projects = () => {
       challenges: 'Designed an efficient UI layout using JavaFX and optimized app responsiveness.',
       skills: ['Java', 'JavaFX', 'Android Studio'],
       github: 'https://github.com/Devthakkar5/Grocery-Store-App-Repo',
-      image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fchatelaine.com%2Fshop-canada%2Fsix-apps-that-make-shopping-canadian-easier%2F&psig=AOvVaw3aQ8VBPNtp4VajuBdA22By&ust=1744254546316000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPDAw9j8yYwDFQAAAAAdAAAAABAE',
+      image: '/lovable-uploads/grocery-app.jpg',
       icon: <Code className="h-8 w-8 text-neon-purple" />
     }
   ];
@@ -104,15 +104,10 @@ const Projects = () => {
                   </div>
                 </div>
               </CardContent>
-              <CardFooter className="flex justify-between">
+              <CardFooter className="flex justify-center">
                 <Button variant="outline" className="border-neon-blue text-neon-blue hover:bg-neon-blue/10 hover:text-white" asChild>
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4" /> View Code
-                  </a>
-                </Button>
-                <Button className="bg-gradient-to-r from-neon-blue to-blue hover:from-blue hover:to-neon-blue text-white" asChild>
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
                   </a>
                 </Button>
               </CardFooter>

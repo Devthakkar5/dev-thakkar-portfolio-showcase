@@ -66,6 +66,16 @@ const Resume = () => {
     }
   ];
 
+  const handleDownloadResume = () => {
+    // Create a link to the PDF file in the public folder
+    const link = document.createElement('a');
+    link.href = '/DevThakkar_Resume.pdf'; // Path to the PDF in the public folder
+    link.download = 'DevThakkar_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="resume" className="py-20 bg-gray-900 relative">
       <div className="absolute inset-0 bg-tech-dots bg-[size:20px_20px] opacity-5"></div>
@@ -77,7 +87,10 @@ const Resume = () => {
           <p className="text-gray-300 max-w-2xl mx-auto mb-8">
             Here's a summary of my education, experience, and technical skills.
           </p>
-          <Button className="bg-gradient-to-r from-neon-blue to-blue hover:from-blue hover:to-neon-blue text-white group">
+          <Button 
+            className="bg-gradient-to-r from-neon-blue to-blue hover:from-blue hover:to-neon-blue text-white group"
+            onClick={handleDownloadResume}
+          >
             <Download className="mr-2 h-4 w-4 group-hover:animate-bounce" /> Download Resume (PDF)
           </Button>
         </div>
