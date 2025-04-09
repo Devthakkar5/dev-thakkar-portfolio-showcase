@@ -2,13 +2,13 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Download, BookOpen, Briefcase, Award, Code } from 'lucide-react';
+import { Download, BookOpen, Briefcase, Award, Code, Calendar, Building } from 'lucide-react';
 
 const Resume = () => {
   const resumeSections = [
     {
       title: 'Education',
-      icon: <BookOpen className="text-blue h-5 w-5" />,
+      icon: <BookOpen className="text-neon-blue h-5 w-5" />,
       items: [
         {
           title: 'Diploma in Computer Systems Technology',
@@ -20,7 +20,7 @@ const Resume = () => {
     },
     {
       title: 'Experience',
-      icon: <Briefcase className="text-blue h-5 w-5" />,
+      icon: <Briefcase className="text-neon-blue h-5 w-5" />,
       items: [
         {
           title: 'Crew Member',
@@ -32,7 +32,7 @@ const Resume = () => {
     },
     {
       title: 'Certifications',
-      icon: <Award className="text-blue h-5 w-5" />,
+      icon: <Award className="text-neon-blue h-5 w-5" />,
       items: [
         {
           title: 'C Programming',
@@ -44,7 +44,7 @@ const Resume = () => {
     },
     {
       title: 'Technical Skills',
-      icon: <Code className="text-blue h-5 w-5" />,
+      icon: <Code className="text-neon-blue h-5 w-5" />,
       items: [
         {
           title: 'Web Development',
@@ -67,43 +67,51 @@ const Resume = () => {
   ];
 
   return (
-    <section id="resume" className="py-20 bg-white">
-      <div className="container px-4 md:px-6 mx-auto">
+    <section id="resume" className="py-20 bg-gray-900 relative">
+      <div className="absolute inset-0 bg-tech-dots bg-[size:20px_20px] opacity-5"></div>
+      
+      <div className="container px-4 md:px-6 mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-poppins text-gray-dark mb-4">Resume</h2>
-          <div className="w-24 h-1 bg-blue mb-6 mx-auto rounded-full"></div>
-          <p className="text-gray max-w-2xl mx-auto mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold font-orbitron text-gradient mb-4">Resume</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-green mb-6 mx-auto rounded-full"></div>
+          <p className="text-gray-300 max-w-2xl mx-auto mb-8">
             Here's a summary of my education, experience, and technical skills.
           </p>
-          <Button className="bg-blue hover:bg-blue-dark text-white">
-            <Download className="mr-2 h-4 w-4" /> Download Resume (PDF)
+          <Button className="bg-gradient-to-r from-neon-blue to-blue hover:from-blue hover:to-neon-blue text-white group">
+            <Download className="mr-2 h-4 w-4 group-hover:animate-bounce" /> Download Resume (PDF)
           </Button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {resumeSections.map((section, index) => (
-            <Card key={index} className="shadow-md">
-              <CardHeader className="border-b">
-                <CardTitle className="flex items-center gap-2 text-xl font-poppins">
-                  {section.icon}
+            <Card key={index} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-neon-blue/30 transition-colors duration-300 shadow-lg group">
+              <CardHeader className="border-b border-gray-700">
+                <CardTitle className="flex items-center gap-2 text-xl font-orbitron text-white">
+                  <div className="p-2 rounded-full bg-gray-700/50 group-hover:bg-neon-blue/10 transition-colors duration-300">
+                    {section.icon}
+                  </div>
                   {section.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 {section.items.map((item, itemIndex) => (
-                  <div key={itemIndex} className={`mb-6 ${itemIndex !== section.items.length - 1 ? 'pb-6 border-b' : ''}`}>
+                  <div key={itemIndex} className={`mb-6 ${itemIndex !== section.items.length - 1 ? 'pb-6 border-b border-gray-700' : ''}`}>
                     <div className="flex justify-between items-start mb-2">
-                      <h4 className="font-semibold text-gray-dark">{item.title}</h4>
+                      <h4 className="font-semibold text-white">{item.title}</h4>
                       {item.period && (
-                        <span className="text-sm px-2 py-1 bg-blue-light text-blue rounded">
+                        <span className="text-sm px-2 py-1 bg-gray-700/50 text-neon-blue rounded flex items-center gap-1">
+                          <Calendar className="h-3 w-3" />
                           {item.period}
                         </span>
                       )}
                     </div>
                     {item.organization && (
-                      <div className="text-blue mb-2">{item.organization}</div>
+                      <div className="text-neon-blue mb-2 flex items-center gap-1">
+                        <Building className="h-3 w-3" />
+                        {item.organization}
+                      </div>
                     )}
-                    <p className="text-gray leading-relaxed">{item.description}</p>
+                    <p className="text-gray-300 leading-relaxed text-sm">{item.description}</p>
                   </div>
                 ))}
               </CardContent>

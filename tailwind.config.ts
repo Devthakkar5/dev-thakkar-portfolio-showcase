@@ -20,8 +20,9 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Open Sans', 'sans-serif'],
-				poppins: ['Poppins', 'sans-serif'],
+				sans: ['Space Grotesk', 'sans-serif'],
+				orbitron: ['Orbitron', 'sans-serif'],
+				rajdhani: ['Rajdhani', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -68,15 +69,21 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				blue: {
-					light: '#D3E4FD',
-					DEFAULT: '#33C3F0',
-					dark: '#2B9BC7',
+					light: 'rgba(41, 121, 255, 0.2)',
+					DEFAULT: '#2979FF',
+					dark: '#1565C0',
 				},
 				gray: {
-					light: '#F1F1F1',
-					DEFAULT: '#8E9196',
-					dark: '#4A4A4A',
-				}
+					light: '#2A2A2A',
+					DEFAULT: '#9E9E9E',
+					dark: '#E0E0E0',
+				},
+				neon: {
+					blue: '#00F0FF',
+					purple: '#9D4EDD',
+					pink: '#FF00AA',
+					green: '#00FF66',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -99,13 +106,37 @@ export default {
 				'slide-in': {
 					from: { opacity: '0', transform: 'translateX(-20px)' },
 					to: { opacity: '1', transform: 'translateX(0)' }
+				},
+				'glow': {
+					'0%, 100%': { 
+						boxShadow: '0 0 5px rgba(0, 240, 255, 0.5), 0 0 15px rgba(0, 240, 255, 0.3)' 
+					},
+					'50%': { 
+						boxShadow: '0 0 20px rgba(0, 240, 255, 0.8), 0 0 30px rgba(0, 240, 255, 0.5)' 
+					}
+				},
+				'text-shimmer': {
+					'0%': {
+						backgroundPosition: '0% 50%'
+					},
+					'100%': {
+						backgroundPosition: '100% 50%'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
-				'slide-in': 'slide-in 0.5s ease-out'
+				'slide-in': 'slide-in 0.5s ease-out',
+				'glow': 'glow 2s ease-in-out infinite',
+				'text-shimmer': 'text-shimmer 3s linear infinite'
+			},
+			backgroundImage: {
+				'hero-pattern': 'linear-gradient(to bottom right, rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url("/public/lovable-uploads/circuit-bg.jpg")',
+				'cyber-grid': 'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("/public/lovable-uploads/grid-bg.jpg")',
+				'tech-dots': 'radial-gradient(circle, rgba(41, 121, 255, 0.1) 2px, transparent 2px), radial-gradient(circle, rgba(41, 121, 255, 0.1) 2px, transparent 2px)',
+				'gradient-text': 'linear-gradient(90deg, #00F0FF, #2979FF, #00FF66)'
 			}
 		}
 	},

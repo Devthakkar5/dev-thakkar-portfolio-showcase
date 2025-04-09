@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -52,16 +53,16 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -97,5 +98,33 @@
 
   body {
     @apply bg-background text-foreground;
+    background-image: radial-gradient(circle at 50% 50%, rgba(41, 121, 255, 0.03) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-text bg-300% animate-text-shimmer;
+  }
+  
+  .glow-border {
+    @apply border border-neon-blue shadow-[0_0_10px_rgba(0,240,255,0.3)] animate-glow;
+  }
+  
+  .nav-item {
+    @apply relative overflow-hidden hover:text-neon-blue transition-colors duration-300;
+  }
+  
+  .nav-item::after {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-[2px] bg-neon-blue rounded-full transform scale-x-0 origin-bottom-right transition-transform duration-300;
+  }
+  
+  .nav-item:hover::after {
+    @apply transform scale-x-100 origin-bottom-left;
+  }
+  
+  .bg-300% {
+    background-size: 300% 300%;
   }
 }

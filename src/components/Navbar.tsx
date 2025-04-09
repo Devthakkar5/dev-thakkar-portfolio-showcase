@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Code } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,9 +40,9 @@ const Navbar = () => {
 
   return (
     <nav 
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50 transition-all duration-500 ${
         scrolled 
-          ? 'bg-white shadow-md py-2' 
+          ? 'bg-black/80 backdrop-blur-md shadow-lg shadow-blue-500/10 py-2' 
           : 'bg-transparent py-4'
       }`}
     >
@@ -56,7 +56,12 @@ const Navbar = () => {
             duration={500}
             className="cursor-pointer"
           >
-            <h1 className="text-xl md:text-2xl font-poppins font-bold text-blue">Dev Thakkar</h1>
+            <div className="flex items-center gap-2">
+              <Code className="text-neon-blue h-6 w-6" />
+              <h1 className="text-xl md:text-2xl font-orbitron font-bold text-gradient">
+                Dev Thakkar
+              </h1>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -69,7 +74,7 @@ const Navbar = () => {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                className="text-gray-dark hover:text-blue transition-colors duration-300 font-medium cursor-pointer"
+                className="nav-item text-gray-300 font-medium cursor-pointer"
               >
                 {item.name}
               </Link>
@@ -78,8 +83,8 @@ const Navbar = () => {
 
           {/* Mobile Navigation Toggle */}
           <div className="md:hidden">
-            <button onClick={toggleMenu} className="text-gray-dark focus:outline-none">
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            <button onClick={toggleMenu} className="text-gray-300 focus:outline-none">
+              {isOpen ? <X size={24} className="text-neon-blue" /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -87,7 +92,7 @@ const Navbar = () => {
         {/* Mobile Navigation Menu */}
         {isOpen && (
           <div className="md:hidden pt-4 pb-2 animate-fade-in">
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-4 bg-gray-900/80 backdrop-blur-md p-4 rounded-md border border-neon-blue/30">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -97,7 +102,7 @@ const Navbar = () => {
                   offset={-70}
                   duration={500}
                   onClick={closeMenu}
-                  className="text-gray-dark hover:text-blue transition-colors duration-300 font-medium py-2 cursor-pointer"
+                  className="text-gray-300 hover:text-neon-blue transition-colors duration-300 font-medium py-2 cursor-pointer"
                 >
                   {item.name}
                 </Link>
