@@ -67,13 +67,8 @@ const Resume = () => {
   ];
 
   const handleDownloadResume = () => {
-    // Create a link to the PDF file in the public folder
-    const link = document.createElement('a');
-    link.href = '/DevThakkar_Resume.pdf'; // Path to the PDF in the public folder
-    link.download = 'DevThakkar_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Use the direct GitHub download link
+    window.open('https://github.com/Devthakkar5/dev-thakkar-portfolio-showcase/blob/main/src/components/Resume.tsx', '_blank');
   };
 
   return (

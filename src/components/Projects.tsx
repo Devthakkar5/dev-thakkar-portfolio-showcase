@@ -18,7 +18,6 @@ const Projects = () => {
       challenges: 'Optimized database performance for fast game state updates.',
       skills: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'MongoDB'],
       github: 'https://github.com/Devthakkar5/UNO-Game-Repo',
-      image: '/lovable-uploads/uno-game.jpg',
       icon: <Server className="h-8 w-8 text-neon-blue" />
     },
     {
@@ -33,7 +32,6 @@ const Projects = () => {
       challenges: 'Designed an efficient UI layout using JavaFX and optimized app responsiveness.',
       skills: ['Java', 'JavaFX', 'Android Studio'],
       github: 'https://github.com/Devthakkar5/Grocery-Store-App-Repo',
-      image: '/lovable-uploads/grocery-app.jpg',
       icon: <Code className="h-8 w-8 text-neon-purple" />
     }
   ];
@@ -55,19 +53,10 @@ const Projects = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project) => (
             <Card key={project.id} className="group bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-neon-blue/50 transition-all duration-500 shadow-lg hover:shadow-neon-blue/20 overflow-hidden transform hover:-translate-y-1">
-              <div className="h-48 overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80 z-10"></div>
-                <div className="absolute top-4 right-4 bg-gray-900/70 p-2 rounded-full z-20 backdrop-blur-sm">
+              <CardHeader className="border-b border-gray-700">
+                <div className="p-4 rounded-full bg-gray-700/50 w-16 h-16 flex items-center justify-center mb-4">
                   {project.icon}
                 </div>
-                <div className="absolute h-full w-full bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 opacity-0 group-hover:opacity-40 transition-opacity duration-500 z-0"></div>
-                <img 
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title} 
-                  className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-110"
-                />
-              </div>
-              <CardHeader>
                 <CardTitle className="text-xl font-orbitron text-white">{project.title}</CardTitle>
                 <CardDescription className="text-gray-400">{project.description}</CardDescription>
               </CardHeader>
